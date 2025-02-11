@@ -50,8 +50,7 @@ public class Instantiation implements CommandLineRunner {
 		
 		postRep.saveAll(Arrays.asList(post1,post2));
 	
-		pax.getPosts().add(post1);
-		pax.getPosts().add(post2);
+		pax.getPosts().addAll(Arrays.asList(post1,post2));
 		
 		rep.save(pax);
 	}
