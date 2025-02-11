@@ -29,6 +29,11 @@ public class UserService {
 		return rep.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id); //pra ver se ele existe
+		rep.deleteById(id);
+	}
+	
 	public User fromDTO(UserDTO objDto) {
 		return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
 	}
