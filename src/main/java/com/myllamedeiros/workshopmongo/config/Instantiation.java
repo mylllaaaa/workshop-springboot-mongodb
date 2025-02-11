@@ -26,7 +26,7 @@ public class Instantiation implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
 		rep.deleteAll();
@@ -38,12 +38,12 @@ public class Instantiation implements CommandLineRunner {
 		
 		rep.saveAll(Arrays.asList(pax,electra,lyria));
 		
-		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Nave da República", "Aprendendo a pilotar. Vlw Orion!", new AuthorDTO(pax));
-		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Aprendendo com a Soberana", "Vou ter que assumir isso um dia então é melhor aprender :|", new AuthorDTO(pax));
+		Post post1 = new Post(null, sdf.parse("2018-03-21"), "Nave da República", "Aprendendo a pilotar. Vlw Orion!", new AuthorDTO(pax));
+		Post post2 = new Post(null, sdf.parse("2018-03-23"), "Aprendendo com a Soberana", "Vou ter que assumir isso um dia então é melhor aprender :|", new AuthorDTO(pax));
 
-		CommentDTO c1 = new CommentDTO("Vai destruir a nave haha!", sdf.parse("21/03/2018"), new AuthorDTO(electra));
-		CommentDTO c2 = new CommentDTO("Você tem que me ensinar depois, não sei muito bem ainda :/", sdf.parse("22/03/2018"), new AuthorDTO(lyria));
-		CommentDTO c3 = new CommentDTO("Que o Reaper nos ajude!!", sdf.parse("23/03/2018"), new AuthorDTO(electra));
+		CommentDTO c1 = new CommentDTO("Vai destruir a nave haha!", sdf.parse("2018-03-21"), new AuthorDTO(electra));
+		CommentDTO c2 = new CommentDTO("Você tem que me ensinar depois, não sei muito bem ainda :/", sdf.parse("2018-03-22"), new AuthorDTO(lyria));
+		CommentDTO c3 = new CommentDTO("Que o Reaper nos ajude!!", sdf.parse("2018-03-23"), new AuthorDTO(electra));
 
 		post1.getComments().addAll(Arrays.asList(c1,c2));
 		post2.getComments().addAll(Arrays.asList(c3));
