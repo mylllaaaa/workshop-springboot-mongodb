@@ -20,7 +20,7 @@ public class Instantiation implements CommandLineRunner {
 		rep.deleteAll();
 		
 		User pax = new User(null, "Pax Augustus", "thesonoftherising@gmail.com"); 
-		User electra = new User(null, "Elextra Barca-Julii", "littledemon@gmail.com"); 
+		User electra = new User(null, "Electra Barca-Julii", "littledemon@gmail.com"); 
 		User lyria = new User(null, "Lyria of Lagalos", "trufflepig@gmail.com"); 
 		
 		rep.saveAll(Arrays.asList(pax,electra,lyria));
