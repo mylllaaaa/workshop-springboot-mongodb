@@ -33,7 +33,7 @@ public class UserResource {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<UserDTO> findAll(@PathVariable String id){ //para respostas http
+	public ResponseEntity<UserDTO> findById(@PathVariable String id){ //para respostas http
 		User obj = service.findById(id);
 		return ResponseEntity.ok().body(new UserDTO(obj));
 	}
